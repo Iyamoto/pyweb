@@ -2,7 +2,7 @@ from bottle import route, run, template
 
 @route('/')
 def index():
-    return template('<h1>pyweb</h1>')
+    return '<h1>pyweb</h1>'
 
 @route('/<action>/<user>')
 def user_api(action, user):
