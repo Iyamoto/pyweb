@@ -1,9 +1,11 @@
-from bottle import Bottle, run
+from bottle import route, run, template
 
-app = Bottle()
+@route('/')
+def index():
+    return template('<h1>pyweb</h1>')
 
-@app.route('/hello')
-def hello():
-    return "Hello World!"
+@route('/<action>/<user>')
+def user_api(action, user):
+    return template('<b>{{action}} {{user}}</b>!', action=action, user=user)
 
-run(app, host='0.0.0.0', port=8080)
+run(host='0.0.0.0', port=8080)
