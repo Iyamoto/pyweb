@@ -15,7 +15,9 @@ class MyTestCase(unittest.TestCase):
 
     def test_ping_url(self):
         pingurl = self.url + 'ping'
+        print(pingurl)
         r = requests.get(pingurl)
+        print(r.status_code, r.reason, r.ok)
         self.assertEqual(True, r.ok)
 
 
