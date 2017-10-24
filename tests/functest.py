@@ -1,0 +1,23 @@
+import unittest
+import requests
+import subprocess
+
+
+class MyTestCase(unittest.TestCase):
+    def setUp(self):
+        cmd = 'docker run -d --name pywebstresstest -p 8080:8080 iyamoto/pyweb:test'
+        subprocess.run(cmd)
+        self.url = 'http://127.0.0.1:8080/'
+
+    def tearDown(self):
+        cmd = 'docker rm -f pywebstresstest'
+        subprocess.run(cmd)
+
+    def test_ping_url(self):
+        pingurl = self.url + 'ping'
+        r = requests.get(pingurl)
+        self.assertEqual(True, r.ok)
+
+
+if __name__ == '__main__':
+    unittest.main()
