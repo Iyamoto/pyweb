@@ -1,5 +1,5 @@
 # pyweb
-Having fun with the bottle
+Python Bottle with Gunicorn in Docker container.
 
 ## installation and testing
 
