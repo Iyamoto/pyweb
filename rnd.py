@@ -11,6 +11,14 @@ def health():
     return 'ok'
 
 
+@route('/status')
+def status():
+    result = {
+        'bottle': 'UP'
+    }
+    return result
+
+
 @route('/v1/<action>/<param>')
 def apiv1(action, param):
     return template('<b>{{action}} {{param}}</b>!', action=action, user=param)
