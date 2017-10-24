@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-cd ..
 git pull
 docker build -t iyamoto/pyweb:test .
 docker run -d --name pywebstresstest -p 8080:8080 iyamoto/pyweb:test
