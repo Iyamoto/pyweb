@@ -5,13 +5,13 @@ import subprocess
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
-        cmd = 'docker run -d --name pywebstresstest -p 8080:8080 iyamoto/pyweb:test'
+        cmd = 'docker run -d --name pywebfunctest -p 8080:8080 iyamoto/pyweb:test'
         subprocess.call(cmd, shell=True)
         self.url = 'http://127.0.0.1:8080/'
 
     def tearDown(self):
-        cmd = 'docker rm -f pywebstresstest'
-        subprocess.call(cmd, shell=True)
+        cmd = 'docker rm -f pywebfunctest'
+        # subprocess.call(cmd, shell=True)
 
     def test_ping_url(self):
         pingurl = self.url + 'ping'
