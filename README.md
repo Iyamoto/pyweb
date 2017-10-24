@@ -5,8 +5,8 @@ Having fun with the bottle
 
     git clone https://github.com/Iyamoto/pyweb.git
     cd pyweb
-    docker build -t iyamoto/pyweb:0.17 .
-    docker run -d --name web -p 8080:8080 iyamoto/pyweb:0.17
+    docker build -t iyamoto/pyweb:latest .
+    docker run -d --name web -p 8080:8080 iyamoto/pyweb:latest
 
 ## to read
 * https://docs.docker.com/engine/reference/builder/
