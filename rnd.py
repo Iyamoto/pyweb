@@ -15,4 +15,4 @@ def health():
 def apiv1(action, param):
     return template('<b>{{action}} {{param}}</b>!', action=action, user=param)
 
-run(server='gunicorn', host='0.0.0.0', port=8080)
+run(server='gunicorn', host='0.0.0.0', port=8080, workers=4)
