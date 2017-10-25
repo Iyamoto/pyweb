@@ -1,5 +1,5 @@
 # PYWEB
-Python Bottle with Gunicorn in Docker container.
+Python Bottle with Gunicorn/Gevent in Docker container.
 
 ## Installation and testing
 
