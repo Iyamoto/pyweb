@@ -6,7 +6,7 @@ Python Bottle with Gunicorn/Gevent in Docker container.
     git clone https://github.com/Iyamoto/pyweb.git
     cd pyweb
     bash tests/stresstest.sh
-    python3 tests/functest.py
+    python3 tests/func_test.py
 
 ## To read
 * https://docs.docker.com/engine/reference/builder/
