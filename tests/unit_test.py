@@ -1,9 +1,10 @@
 import unittest
+import rnd
 
 
 class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
+    def test_ping(self):
+        assert rnd.health() == 'ok'
 
 
 if __name__ == '__main__':

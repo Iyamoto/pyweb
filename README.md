@@ -12,3 +12,4 @@ Python Bottle with Gunicorn/Gevent in Docker container.
 * https://docs.docker.com/engine/reference/builder/
 * https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#the-dockerfile-instructions
 * https://bottlepy.org/docs/dev/tutorial.html
+* https://bottlepy.org/docs/dev/recipes.html
