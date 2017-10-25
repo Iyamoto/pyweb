@@ -4,14 +4,13 @@ import rnd
 
 class MyTestCase(unittest.TestCase):
     def test_index(self):
-        assert rnd.index() == '<h1>pyweb</h1>'
+        self.assertEqual('<h1>pyweb</h1>', rnd.index())
 
     def test_ping(self):
-        assert rnd.health() == 'ok'
+        self.assertEqual('ok', rnd.health())
 
     def test_status(self):
-        assert type(rnd.status()) == dict
-        assert rnd.status() == {'bottle': 'UP'}
+        self.assertDictEqual({'bottle': 'UP'}, rnd.status())
 
 
 if __name__ == '__main__':
