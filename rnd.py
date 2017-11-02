@@ -1,6 +1,6 @@
 # Researching Bottle
 
-from bottle import route, default_app
+from bottle import route, default_app, run
 
 
 @route('/')
@@ -21,4 +21,12 @@ def status():
     return result
 
 
+@route('/webhook', method=['POST'])
+def webhook():
+    return 'ok'
+
+
 application = default_app()
+
+if __name__ == '__main__':
+    run(server='gunicorn', host='0.0.0.0', port=8080, workers=4)

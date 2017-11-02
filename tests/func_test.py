@@ -15,15 +15,14 @@ class MyTestCase(unittest.TestCase):
         cmd = 'docker rm -f pywebfunctest'
         subprocess.call(cmd, shell=True)
 
-    def test_urls(self):
-        # Test ping url
+    def test_ping_url(self):
         url = self.url + 'ping'
         print(url)
         r = requests.get(url)
         print(r.status_code, r.reason, r.ok)
         self.assertEqual(True, r.ok)
 
-        # Test status url
+    def test_status_url(self):
         url = self.url + 'status'
         print(url)
         r = requests.get(url)
@@ -31,6 +30,12 @@ class MyTestCase(unittest.TestCase):
         print(r.json())
         self.assertEqual(True, r.ok)
 
+    def test_webhook_url(self):
+        url = self.url + 'webhook'
+        print(url)
+        r = requests.post(url)
+        print(r.status_code, r.reason, r.ok)
+        self.assertEqual(True, r.ok)
 
 if __name__ == '__main__':
     unittest.main()
