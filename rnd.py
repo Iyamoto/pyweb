@@ -37,9 +37,21 @@ def webhook():
 
 @route('/login')
 def login():
+    return '''
+        <form action="/login" method="post">
+            Username: <input name="username" type="text" />
+            <input value="Login" type="submit" />
+        </form>
+    '''
+
+
+@route('/login', method='POST')
+def do_login():
+    username = request.forms.get('username')
+
+    # Check login
     # TODO implement webhook based login
     return 'ok'
-
 
 @error(404)
 def error404():
