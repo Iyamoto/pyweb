@@ -24,10 +24,8 @@ def status():
 
 @route('/webhook', method='POST')
 def webhook():
-    print(request)
     data = json.loads(request.json)
-    print(data)
-    return 'ok'
+    return data
 
 
 application = default_app()
