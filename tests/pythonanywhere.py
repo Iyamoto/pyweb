@@ -1,28 +1,15 @@
 import unittest
-import requests
-import subprocess
-import time
+from func_test import TestUrls
 
 
-class PythonAnywhere(unittest.TestCase):
+class TestPythonAnywhere(TestUrls):
     def setUp(self):
         self.url = 'http://iyamoto.pythonanywhere.com/'
 
     def test_urls(self):
-        # Test ping url
-        url = self.url + 'ping'
-        print(url)
-        r = requests.get(url)
-        print(r.status_code, r.reason, r.ok)
-        self.assertEqual(True, r.ok)
-
-        # Test status url
-        url = self.url + 'status'
-        print(url)
-        r = requests.get(url)
-        print(r.status_code, r.reason, r.ok)
-        print(r.json())
-        self.assertEqual(True, r.ok)
+        self.ping_url(url=self.url)
+        self.status_url(url=self.url)
+        self.webhook_url(url=self.url)
 
 
 if __name__ == '__main__':
