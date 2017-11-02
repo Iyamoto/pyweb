@@ -24,7 +24,7 @@ def status():
 
 @route('/webhook', method='POST')
 def webhook():
-    data = json.loads(request.json)
+    data = request.json
     return data
 
 
