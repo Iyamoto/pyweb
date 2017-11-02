@@ -22,7 +22,7 @@ def status():
     return result
 
 
-@route('/webhook', method=['POST'])
+@route('/webhook', method='POST')
 def webhook():
     data = json.loads(request.data)
     print(data)

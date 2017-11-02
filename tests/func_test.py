@@ -33,7 +33,8 @@ class MyTestCase(unittest.TestCase):
     def test_webhook_url(self):
         url = self.url + 'webhook'
         print(url)
-        r = requests.post(url)
+        data = {'key': 'value'}
+        r = requests.post(url, json=data)
         print(r.status_code, r.reason, r.ok)
         self.assertEqual(True, r.ok)
 
