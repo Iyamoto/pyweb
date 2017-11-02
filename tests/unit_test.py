@@ -4,7 +4,7 @@ import rnd
 
 class MyTestCase(unittest.TestCase):
     def test_index(self):
-        self.assertEqual('<h1>pyweb</h1>', rnd.index())
+        self.assertEqual('<h1>PYWEB</h1>', rnd.index())
 
     def test_ping(self):
         self.assertEqual('ok', rnd.health())

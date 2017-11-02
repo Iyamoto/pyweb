@@ -1,13 +1,11 @@
 # Researching Bottle
 
-# from gevent import monkey
-# monkey.patch_all()
-from bottle import route, run, template
+from bottle import route, default_app
 
 
 @route('/')
 def index():
-    return '<h1>pyweb</h1>'
+    return '<h1>PYWEB</h1>'
 
 
 @route('/ping')
@@ -23,10 +21,4 @@ def status():
     return result
 
 
-@route('/v1/<action>/<param>')
-def apiv1(action, param):
-    return template('<b>{{action}} {{param}}</b>!', action=action, user=param)
-
-if __name__ == '__main__':
-    # run(server='gunicorn', host='0.0.0.0', port=8080, workers=4)
-    run(host='0.0.0.0', port=8080, server='gevent')
+application = default_app()
