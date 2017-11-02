@@ -1,5 +1,10 @@
 # PYWEB
-Python Bottle with Gunicorn/Gevent in Docker container.
+PYWEB is a template for simple API backend based on Python Bottle framework. 
+
+* Runs upon [Gunicorn WSGI HTTP Server](http://gunicorn.org/)
+* Docker container configs included
+* [Demo site](http://iyamoto.pythonanywhere.com/)
+* Webhooks support
 
 ## Installation and testing
 
