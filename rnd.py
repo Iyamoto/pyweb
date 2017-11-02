@@ -1,11 +1,11 @@
 # Researching Bottle
 
 from bottle import route, default_app, run, request, error
-import json
 
 
 @route('/')
 def index():
+    # TODO must show available links with descriptions
     return '<h1>PYWEB</h1>'
 
 
@@ -16,6 +16,7 @@ def health():
 
 @route('/status')
 def status():
+    # TODO run some tests here
     result = {
         'bottle': 'UP'
     }
@@ -32,6 +33,12 @@ def webhook():
     # Do something
 
     return data
+
+
+@route('/login')
+def login():
+    # TODO implement webhook based login
+    return 'ok'
 
 
 @error(404)
