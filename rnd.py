@@ -5,9 +5,14 @@ import os
 from bottle import route, default_app, run, request, error
 
 
-def updatelocalstate(statepath='state.json', data=None):
+def updatelocalstate(filename='state.json', folder='data', data=None):
     if data is None:
         return 0
+
+    if not os.path.isdir(folder):
+        os.mkdir(folder)
+
+    statepath = os.path.join(folder, filename)
 
     if os.path.isfile(statepath):
         with open(statepath, 'r') as infile:
@@ -53,7 +58,7 @@ def webhook():
     data = request.json
 
     # Do something
-    updatelocalstate(statepath=os.path.join('data', 'state.json'), data=data)
+    updatelocalstate(data=data)
 
     return data
 
