@@ -81,6 +81,7 @@ def do_login():
     # TODO implement webhook based login
     return 'ok'
 
+
 @error(404)
 def error404():
     return 'Nothing here, sorry'
