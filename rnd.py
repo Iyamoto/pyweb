@@ -1,6 +1,7 @@
 # Researching Bottle
 
-from bottle import route, default_app, run
+from bottle import route, default_app, run, request
+import json
 
 
 @route('/')
@@ -23,6 +24,8 @@ def status():
 
 @route('/webhook', method=['POST'])
 def webhook():
+    data = json.loads(request.data)
+    print(data)
     return 'ok'
 
 
