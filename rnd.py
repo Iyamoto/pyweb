@@ -1,6 +1,28 @@
 # Researching Bottle
 
+import json
+import os
 from bottle import route, default_app, run, request, error
+
+
+def updatelocalstate(statepath='state.json', data=None):
+    if data is None:
+        return 0
+
+    if os.path.isfile(statepath):
+        with open(statepath, 'r') as infile:
+            state = json.load(infile)
+    else:
+        state = dict()
+
+    z = state.copy()
+    z.update(data)
+
+    # Save updated state locally
+    with open(statepath, 'w') as outfile:
+        json.dump(z, outfile)
+
+    return len(z)
 
 
 @route('/')
@@ -31,6 +53,7 @@ def webhook():
     data = request.json
 
     # Do something
+    updatelocalstate(statepath=os.path.join('data', 'state.json'), data=data)
 
     return data
 
