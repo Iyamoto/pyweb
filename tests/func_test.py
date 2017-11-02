@@ -33,10 +33,13 @@ class MyTestCase(unittest.TestCase):
     def test_webhook_url(self):
         url = self.url + 'webhook'
         print(url)
+
         data = {'key': 'value'}
         r = requests.post(url, json=data)
+
         print(r.status_code, r.reason, r.ok)
         self.assertEqual(True, r.ok)
+        self.assertDictEqual(data, r.json())
 
 if __name__ == '__main__':
     unittest.main()

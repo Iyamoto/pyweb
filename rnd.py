@@ -1,6 +1,6 @@
 # Researching Bottle
 
-from bottle import route, default_app, run, request
+from bottle import route, default_app, run, request, error
 import json
 
 
@@ -24,8 +24,19 @@ def status():
 
 @route('/webhook', method='POST')
 def webhook():
+    # Check the sender
+
+    # Get message
     data = request.json
+
+    # Do something
+
     return data
+
+
+@error(404)
+def error404():
+    return 'Nothing here, sorry'
 
 
 application = default_app()

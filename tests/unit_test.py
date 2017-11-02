@@ -13,7 +13,10 @@ class MyTestCase(unittest.TestCase):
         self.assertDictEqual({'bottle': 'UP'}, rnd.status())
 
     def test_webhook(self):
-        self.assertEqual('ok', rnd.webhook())
+        self.assertEqual(None, rnd.webhook())
+
+    def test_error_404(self):
+        self.assertEqual(str, type(rnd.error404()))
 
 
 if __name__ == '__main__':
