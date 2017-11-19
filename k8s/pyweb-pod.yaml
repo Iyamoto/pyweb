@@ -18,3 +18,8 @@ spec:
         timeoutSeconds: 1
         periodSeconds: 10
         failureThreshold: 3
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "32Mi"
+
